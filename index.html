@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Book Recommender</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Student Book Recommender</h1>
+            <p>Tell us what you're interested in, and we'll find your next read!</p>
+        </header>
+
+        <div class="search-section">
+            <input type="text" id="interestInput" placeholder="Enter a topic (e.g., Science, Technology, Fiction...)">
+            <button onclick="getRecommendations()">Get Suggestions</button>
+        </div>
+
+        <div id="results" class="results-grid">
+            <!-- Recommendations will appear here -->
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
