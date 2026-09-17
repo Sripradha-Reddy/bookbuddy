@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Details - Book Buddy</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>📚 Book Buddy</h1>
+        <p>Explore the world of books</p>
+    </header>
+
+    <main>
+
+        <!-- Back Button -->
+        <a href="index.html" class="back-button">
+            ← Back to Books
+        </a>
+
+        <!-- Book Details Card -->
+        <div class="book-details">
+
+            <!-- Book Cover -->
+            <div class="book-cover">
+                <div class="book-icon">📖</div>
+                <p>Book Buddy</p>
+            </div>
+
+            <!-- Book Information -->
+            <div class="book-info">
+
+                <h2 id="bookTitle">Loading...</h2>
+
+                <p class="author">
+                    By <span id="bookAuthor">Loading...</span>
+                </p>
+
+                <!-- Category -->
+                <span class="category-badge" id="bookCategory">
+                    Loading...
+                </span>
+
+                <!-- Rating -->
+                <div class="rating-box">
+                    <span class="stars">★★★★★</span>
+                    <span id="bookRating">4.5</span>
+                </div>
+
+                <hr>
+
+                <!-- Description -->
+                <h3>📖 About This Book</h3>
+
+                <p id="bookDescription" class="description">
+                    Loading book description...
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="book-actions">
+                    <button onclick="goBack()" class="primary-button">
+                        ← Back to Books
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>📚 Book Buddy</p>
+        <p>Discover • Learn • Read</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
