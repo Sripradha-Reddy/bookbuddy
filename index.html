@@ -1,217 +1,573 @@
-[5:24 PM, 9/16/2026] Sripradha Reddy: function searchBooks() {
-    let search = document.getElementById("searchBox").value.toLowerCase();
-    let books = document.querySelectorAll(".book");
+<!DOCTYPE html>
 
-    books.forEach(function(book) {
-        let text = book.textContent.toLowerCase();
+<html lang="en">
 
-        if (text.includes(search)) {
-            book.style.display = "block";
-        } else {
-            book.style.display = "none";
-        }
-    });
-}
-
-function filterBooks(category) {
-    let books = document.querySelectorAll(".book");
-
-    books.forEach(function(book) {
-        let bookCategory = book.querySelector("p:nth-of-type(2)");
-
-        if (category === "all" || bookCategory.textContent.includes(category)) {
-            book.style.display = "block";
-        } else {
-            book.style.display = "none";
-        }
-    });
-}
-[9:05 AM, 9/17/2026] Sripradha Reddy: <!DOCTYPE html>
-<html>
 <head>
-    <title>Book Buddy</title>
-    <link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Book Buddy - Discover Your Next Book</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
-    <h1>📚 Book Buddy</h1>
-    <p>Book suggestions for B.Tech 1st Year Students</p>
+
+<div class="logo">
+    📚 Book Buddy
+</div>
+
+<p>
+    Discover books for learning, growth and entertainment
+</p>
+
 </header>
+
+
+
+
+<!-- ================= MAIN ================= -->
 
 <main>
 
-    <h2>🎓 B.Tech 1st Year Books</h2>
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <h1>
+        Find Your Next Great Book 📖
+    </h1>
+
+    <p>
+        Explore books for students, programmers, professionals
+        and everyone who loves reading.
+    </p>
+
+</section>
+
+
+
+<!-- SEARCH -->
+
+<section class="search-section">
 
     <input
         type="text"
         id="searchBox"
-        placeholder="Search for a book..."
+        placeholder="🔍 Search books, authors..."
         onkeyup="searchBooks()"
     >
 
+</section>
+
+
+
+<!-- CATEGORIES -->
+
+<section>
+
+    <h2>Explore Categories</h2>
+
+
     <div class="categories">
-        <button onclick="filterBooks('all')">All</button>
-        <button onclick="filterBooks('Mathematics')">Mathematics</button>
-        <button onclick="filterBooks('Programming')">Programming</button>
-        <button onclick="filterBooks('Physics')">Physics</button>
-        <button onclick="filterBooks('Chemistry')">Chemistry</button>
-        <button onclick="filterBooks('Engineering')">Engineering</button>
-        <button onclick="filterBooks('Self Development')">Self Development</button>
+
+        <button onclick="filterBooks('all')">
+            All Books
+        </button>
+
+        <button onclick="filterBooks('Engineering')">
+            🎓 Engineering
+        </button>
+
+        <button onclick="filterBooks('Programming')">
+            💻 Programming
+        </button>
+
+        <button onclick="filterBooks('Science')">
+            🔬 Science
+        </button>
+
+        <button onclick="filterBooks('Mathematics')">
+            🧮 Mathematics
+        </button>
+
+        <button onclick="filterBooks('Business')">
+            📈 Business
+        </button>
+
+        <button onclick="filterBooks('Self Development')">
+            🧠 Self Development
+        </button>
+
+        <button onclick="filterBooks('Fiction')">
+            📖 Fiction
+        </button>
+
+        <button onclick="filterBooks('Biography')">
+            👤 Biography
+        </button>
+
     </div>
+
+</section>
+
+
+
+<!-- BOOK SECTION -->
+
+<section>
+
+    <h2>📚 Popular Books</h2>
+
 
     <div class="books">
 
-        <div class="book">
-            <h3>Engineering Mathematics</h3>
-            <p>Author: John Bird</p>
-            <p>Category: Mathematics</p>
-            <button>View Book</button>
-        </div>
+
+
+        <!-- BOOK 1 -->
 
         <div class="book">
-            <h3>Higher Engineering Mathematics</h3>
-            <p>Author: B. S. Grewal</p>
-            <p>Category: Mathematics</p>
-            <button>View Book</button>
+
+            <div class="book-icon">
+                📘
+            </div>
+
+            <h3>
+                Engineering Mathematics
+            </h3>
+
+            <p>
+                Author: John Bird
+            </p>
+
+            <p>
+                Category: Engineering
+            </p>
+
+            <p class="rating">
+                ⭐⭐⭐⭐☆
+            </p>
+
+            <a href="book.html?id=engineering-mathematics">
+                <button>
+                    View Book
+                </button>
+            </a>
+
         </div>
 
-        <div class="book">
-            <h3>Engineering Physics</h3>
-            <p>Author: Gaur & Gupta</p>
-            <p>Category: Physics</p>
-            <button>View Book</button>
-        </div>
+
+
+        <!-- BOOK 2 -->
 
         <div class="book">
-            <h3>Engineering Chemistry</h3>
-            <p>Author: Jain & Jain</p>
-            <p>Category: Chemistry</p>
-            <button>View Book</button>
+
+            <div class="book-icon">
+                📗
+            </div>
+
+            <h3>
+                Python Crash Course
+            </h3>
+
+            <p>
+                Author: Eric Matthes
+            </p>
+
+            <p>
+                Category: Programming
+            </p>
+
+            <p class="rating">
+                ⭐⭐⭐⭐⭐
+            </p>
+
+            <a href="book.html?id=python-crash-course">
+                <button>
+                    View Book
+                </button>
+            </a>
+
         </div>
 
-        <div class="book">
-            <h3>Programming in C</h3>
-            <p>Author: E. Balagurusamy</p>
-            <p>Category: Programming</p>
-            <button>View Book</button>
-        </div>
+
+
+        <!-- BOOK 3 -->
 
         <div class="book">
-            <h3>Let Us C</h3>
-            <p>Author: Yashavant Kanetkar</p>
-            <p>Category: Programming</p>
-            <button>View Book</button>
+
+            <div class="book-icon">
+                💻
+            </div>
+
+            <h3>
+                Clean Code
+            </h3>
+
+            <p>
+                Author: Robert C. Martin
+            </p>
+
+            <p>
+                Category: Programming
+            </p>
+
+            <p class="rating">
+                ⭐⭐⭐⭐⭐
+            </p>
+
+            <a href="book.html?id=clean-code">
+                <button>
+                    View Book
+                </button>
+            </a>
+
         </div>
 
-        <div class="book">
-            <h3>Python Crash Course</h3>
-            <p>Author: Eric Matthes</p>
-            <p>Category: Programming</p>
-            <button>View Book</button>
-        </div>
+
+
+        <!-- BOOK 4 -->
 
         <div class="book">
-            <h3>Head First Java</h3>
-            <p>Author: Kathy Sierra & Bert Bates</p>
-            <p>Category: Programming</p>
-            <button>View Book</button>
+
+            <div class="book-icon">
+                🧠
+            </div>
+
+            <h3>
+                Atomic Habits
+            </h3>
+
+            <p>
+                Author: James Clear
+            </p>
+
+            <p>
+                Category: Self Development
+            </p>
+
+            <p class="rating">
+                ⭐⭐⭐⭐⭐
+            </p>
+
+            <a href="book.html?id=atomic-habits">
+                <button>
+                    View Book
+                </button>
+            </a>
+
         </div>
 
-        <div class="book">
-            <h3>Computer Fundamentals</h3>
-            <p>Author: P. K. Sinha</p>
-            <p>Category: Computer Science</p>
-            <button>View Book</button>
-        </div>
+
+
+        <!-- BOOK 5 -->
 
         <div class="book">
-            <h3>Engineering Graphics</h3>
-            <p>Author: N. H. Dubey</p>
-            <p>Category: Engineering</p>
-            <button>View Book</button>
+
+            <div class="book-icon">
+                📕
+            </div>
+
+            <h3>
+                Wings of Fire
+            </h3>
+
+            <p>
+                Author: A. P. J. Abdul Kalam
+            </p>
+
+            <p>
+                Category: Biography
+            </p>
+
+            <p class="rating">
+                ⭐⭐⭐⭐⭐
+            </p>
+
+            <a href="book.html?id=wings-of-fire">
+                <button>
+                    View Book
+                </button>
+            </a>
+
         </div>
 
-        <div class="book">
-            <h3>Basic Electrical Engineering</h3>
-            <p>Author: V. K. Mehta</p>
-            <p>Category: Electrical</p>
-            <button>View Book</button>
-        </div>
+
+
+        <!-- BOOK 6 -->
 
         <div class="book">
-            <h3>Basic Electronics</h3>
-            <p>Author: B. L. Theraja</p>
-            <p>Category: Electronics</p>
-            <button>View Book</button>
+
+            <div class="book-icon">
+                📙
+            </div>
+
+            <h3>
+                The Alchemist
+            </h3>
+
+            <p>
+                Author: Paulo Coelho
+            </p>
+
+            <p>
+                Category: Fiction
+            </p>
+
+            <p class="rating">
+                ⭐⭐⭐⭐⭐
+            </p>
+
+            <a href="book.html?id=the-alchemist">
+                <button>
+                    View Book
+                </button>
+            </a>
+
         </div>
 
-        <div class="book">
-            <h3>Elements of Mechanical Engineering</h3>
-            <p>Author: R. K. Rajput</p>
-            <p>Category: Mechanical</p>
-            <button>View Book</button>
-        </div>
+
+
+        <!-- BOOK 7 -->
 
         <div class="book">
-            <h3>Elements of Civil Engineering</h3>
-            <p>Author: S. S. Bhavikatti</p>
-            <p>Category: Civil Engineering</p>
-            <button>View Book</button>
+
+            <div class="book-icon">
+                📘
+            </div>
+
+            <h3>
+                Introduction to Algorithms
+            </h3>
+
+            <p>
+                Author: Cormen, Leiserson, Rivest & Stein
+            </p>
+
+            <p>
+                Category: Programming
+            </p>
+
+            <p class="rating">
+                ⭐⭐⭐⭐⭐
+            </p>
+
+            <a href="book.html?id=introduction-to-algorithms">
+                <button>
+                    View Book
+                </button>
+            </a>
+
         </div>
 
-        <div class="book">
-            <h3>Introduction to Algorithms</h3>
-            <p>Author: Cormen, Leiserson, Rivest & Stein</p>
-            <p>Category: Computer Science</p>
-            <button>View Book</button>
-        </div>
+
+
+        <!-- BOOK 8 -->
 
         <div class="book">
-            <h3>Clean Code</h3>
-            <p>Author: Robert C. Martin</p>
-            <p>Category: Programming</p>
-            <button>View Book</button>
+
+            <div class="book-icon">
+                📗
+            </div>
+
+            <h3>
+                The 7 Habits of Highly Effective People
+            </h3>
+
+            <p>
+                Author: Stephen R. Covey
+            </p>
+
+            <p>
+                Category: Self Development
+            </p>
+
+            <p class="rating">
+                ⭐⭐⭐⭐⭐
+            </p>
+
+            <a href="book.html?id=7-habits">
+                <button>
+                    View Book
+                </button>
+            </a>
+
         </div>
 
-        <div class="book">
-            <h3>Atomic Habits</h3>
-            <p>Author: James Clear</p>
-            <p>Category: Self Development</p>
-            <button>View Book</button>
-        </div>
+
+
+        <!-- BOOK 9 -->
 
         <div class="book">
-            <h3>Deep Work</h3>
-            <p>Author: Cal Newport</p>
-            <p>Category: Productivity</p>
-            <button>View Book</button>
+
+            <div class="book-icon">
+                📊
+            </div>
+
+            <h3>
+                The Lean Startup
+            </h3>
+
+            <p>
+                Author: Eric Ries
+            </p>
+
+            <p>
+                Category: Business
+            </p>
+
+            <p class="rating">
+                ⭐⭐⭐⭐☆
+            </p>
+
+            <a href="book.html?id=lean-startup">
+                <button>
+                    View Book
+                </button>
+            </a>
+
         </div>
 
-        <div class="book">
-            <h3>The 7 Habits of Highly Effective People</h3>
-            <p>Author: Stephen R. Covey</p>
-            <p>Category: Self Development</p>
-            <button>View Book</button>
-        </div>
+
+
+        <!-- BOOK 10 -->
 
         <div class="book">
-            <h3>Wings of Fire</h3>
-            <p>Author: A. P. J. Abdul Kalam</p>
-            <p>Category: Biography</p>
-            <button>View Book</button>
+
+            <div class="book-icon">
+                🧮
+            </div>
+
+            <h3>
+                Higher Engineering Mathematics
+            </h3>
+
+            <p>
+                Author: B. S. Grewal
+            </p>
+
+            <p>
+                Category: Mathematics
+            </p>
+
+            <p class="rating">
+                ⭐⭐⭐⭐☆
+            </p>
+
+            <a href="book.html?id=higher-engineering-mathematics">
+                <button>
+                    View Book
+                </button>
+            </a>
+
         </div>
+
+
+
+        <!-- BOOK 11 -->
+
+        <div class="book">
+
+            <div class="book-icon">
+                🔬
+            </div>
+
+            <h3>
+                A Brief History of Time
+            </h3>
+
+            <p>
+                Author: Stephen Hawking
+            </p>
+
+            <p>
+                Category: Science
+            </p>
+
+            <p class="rating">
+                ⭐⭐⭐⭐⭐
+            </p>
+
+            <a href="book.html?id=brief-history-of-time">
+                <button>
+                    View Book
+                </button>
+            </a>
+
+        </div>
+
+
+
+        <!-- BOOK 12 -->
+
+        <div class="book">
+
+            <div class="book-icon">
+                📖
+            </div>
+
+            <h3>
+                Rich Dad Poor Dad
+            </h3>
+
+            <p>
+                Author: Robert Kiyosaki
+            </p>
+
+            <p>
+                Category: Business
+            </p>
+
+            <p class="rating">
+                ⭐⭐⭐⭐☆
+            </p>
+
+            <a href="book.html?id=rich-dad-poor-dad">
+                <button>
+                    View Book
+                </button>
+            </a>
+
+        </div>
+
+
 
     </div>
 
+</section>
+
 </main>
 
+
+
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
-    📖 Book Buddy | B.Tech 1st Year
+
+<p>
+    📖 Book Buddy
+</p>
+
+<p>
+    Discover • Learn • Grow
+</p>
+
 </footer>
 
-<script src="app.js"></script>
+
+
+
+<script src="script.js"></script>
 
 </body>
+
 </html>
+```
