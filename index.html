@@ -1,27 +1,217 @@
-<!DOCTYPE html>
-<html lang="en">
+[5:24 PM, 9/16/2026] Sripradha Reddy: function searchBooks() {
+    let search = document.getElementById("searchBox").value.toLowerCase();
+    let books = document.querySelectorAll(".book");
+
+    books.forEach(function(book) {
+        let text = book.textContent.toLowerCase();
+
+        if (text.includes(search)) {
+            book.style.display = "block";
+        } else {
+            book.style.display = "none";
+        }
+    });
+}
+
+function filterBooks(category) {
+    let books = document.querySelectorAll(".book");
+
+    books.forEach(function(book) {
+        let bookCategory = book.querySelector("p:nth-of-type(2)");
+
+        if (category === "all" || bookCategory.textContent.includes(category)) {
+            book.style.display = "block";
+        } else {
+            book.style.display = "none";
+        }
+    });
+}
+[9:05 AM, 9/17/2026] Sripradha Reddy: <!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Book Recommender</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Book Buddy</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <h1>📚 Student Book Recommender</h1>
-            <p>Tell us what you're interested in, and we'll find your next read!</p>
-        </header>
 
-        <div class="search-section">
-            <input type="text" id="interestInput" placeholder="Enter a topic (e.g., Science, Technology, Fiction...)">
-            <button onclick="getRecommendations()">Get Suggestions</button>
-        </div>
+<header>
+    <h1>📚 Book Buddy</h1>
+    <p>Book suggestions for B.Tech 1st Year Students</p>
+</header>
 
-        <div id="results" class="results-grid">
-            <!-- Recommendations will appear here -->
-        </div>
+<main>
+
+    <h2>🎓 B.Tech 1st Year Books</h2>
+
+    <input
+        type="text"
+        id="searchBox"
+        placeholder="Search for a book..."
+        onkeyup="searchBooks()"
+    >
+
+    <div class="categories">
+        <button onclick="filterBooks('all')">All</button>
+        <button onclick="filterBooks('Mathematics')">Mathematics</button>
+        <button onclick="filterBooks('Programming')">Programming</button>
+        <button onclick="filterBooks('Physics')">Physics</button>
+        <button onclick="filterBooks('Chemistry')">Chemistry</button>
+        <button onclick="filterBooks('Engineering')">Engineering</button>
+        <button onclick="filterBooks('Self Development')">Self Development</button>
     </div>
-    <script src="app.js"></script>
+
+    <div class="books">
+
+        <div class="book">
+            <h3>Engineering Mathematics</h3>
+            <p>Author: John Bird</p>
+            <p>Category: Mathematics</p>
+            <button>View Book</button>
+        </div>
+
+        <div class="book">
+            <h3>Higher Engineering Mathematics</h3>
+            <p>Author: B. S. Grewal</p>
+            <p>Category: Mathematics</p>
+            <button>View Book</button>
+        </div>
+
+        <div class="book">
+            <h3>Engineering Physics</h3>
+            <p>Author: Gaur & Gupta</p>
+            <p>Category: Physics</p>
+            <button>View Book</button>
+        </div>
+
+        <div class="book">
+            <h3>Engineering Chemistry</h3>
+            <p>Author: Jain & Jain</p>
+            <p>Category: Chemistry</p>
+            <button>View Book</button>
+        </div>
+
+        <div class="book">
+            <h3>Programming in C</h3>
+            <p>Author: E. Balagurusamy</p>
+            <p>Category: Programming</p>
+            <button>View Book</button>
+        </div>
+
+        <div class="book">
+            <h3>Let Us C</h3>
+            <p>Author: Yashavant Kanetkar</p>
+            <p>Category: Programming</p>
+            <button>View Book</button>
+        </div>
+
+        <div class="book">
+            <h3>Python Crash Course</h3>
+            <p>Author: Eric Matthes</p>
+            <p>Category: Programming</p>
+            <button>View Book</button>
+        </div>
+
+        <div class="book">
+            <h3>Head First Java</h3>
+            <p>Author: Kathy Sierra & Bert Bates</p>
+            <p>Category: Programming</p>
+            <button>View Book</button>
+        </div>
+
+        <div class="book">
+            <h3>Computer Fundamentals</h3>
+            <p>Author: P. K. Sinha</p>
+            <p>Category: Computer Science</p>
+            <button>View Book</button>
+        </div>
+
+        <div class="book">
+            <h3>Engineering Graphics</h3>
+            <p>Author: N. H. Dubey</p>
+            <p>Category: Engineering</p>
+            <button>View Book</button>
+        </div>
+
+        <div class="book">
+            <h3>Basic Electrical Engineering</h3>
+            <p>Author: V. K. Mehta</p>
+            <p>Category: Electrical</p>
+            <button>View Book</button>
+        </div>
+
+        <div class="book">
+            <h3>Basic Electronics</h3>
+            <p>Author: B. L. Theraja</p>
+            <p>Category: Electronics</p>
+            <button>View Book</button>
+        </div>
+
+        <div class="book">
+            <h3>Elements of Mechanical Engineering</h3>
+            <p>Author: R. K. Rajput</p>
+            <p>Category: Mechanical</p>
+            <button>View Book</button>
+        </div>
+
+        <div class="book">
+            <h3>Elements of Civil Engineering</h3>
+            <p>Author: S. S. Bhavikatti</p>
+            <p>Category: Civil Engineering</p>
+            <button>View Book</button>
+        </div>
+
+        <div class="book">
+            <h3>Introduction to Algorithms</h3>
+            <p>Author: Cormen, Leiserson, Rivest & Stein</p>
+            <p>Category: Computer Science</p>
+            <button>View Book</button>
+        </div>
+
+        <div class="book">
+            <h3>Clean Code</h3>
+            <p>Author: Robert C. Martin</p>
+            <p>Category: Programming</p>
+            <button>View Book</button>
+        </div>
+
+        <div class="book">
+            <h3>Atomic Habits</h3>
+            <p>Author: James Clear</p>
+            <p>Category: Self Development</p>
+            <button>View Book</button>
+        </div>
+
+        <div class="book">
+            <h3>Deep Work</h3>
+            <p>Author: Cal Newport</p>
+            <p>Category: Productivity</p>
+            <button>View Book</button>
+        </div>
+
+        <div class="book">
+            <h3>The 7 Habits of Highly Effective People</h3>
+            <p>Author: Stephen R. Covey</p>
+            <p>Category: Self Development</p>
+            <button>View Book</button>
+        </div>
+
+        <div class="book">
+            <h3>Wings of Fire</h3>
+            <p>Author: A. P. J. Abdul Kalam</p>
+            <p>Category: Biography</p>
+            <button>View Book</button>
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    📖 Book Buddy | B.Tech 1st Year
+</footer>
+
+<script src="app.js"></script>
+
 </body>
 </html>
